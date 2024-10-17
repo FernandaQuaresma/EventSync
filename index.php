@@ -19,59 +19,63 @@
         <div class="menu-btn"></div>
         <div class="navigation">
             <div class="navigation-items">
-                <a href="protocolo-www.html">CONSULTAR EVENTO</a>
-                <a href="servidores-webserver.html">MEUS EVENTOS</a>
-                <a href="linguagens-php.html">ATUALIZAR EVENTO</a>
-                <a href="endereçamento-ip.html">REMOVER EVENTO</a>
+                <a href="consultar.php">CONSULTAR EVENTO</a>
+                <a href="meus-eventos.php">MEUS EVENTOS</a>
+                <a href="atualizar.php">EDITAR EVENTO</a>
+                <a href="remover.php">REMOVER EVENTO</a>
             </div>
         </div>
     </header>
 
     <section class="home">
-        <video class="video-slide" src="yellow.mp4" autoplay muted loop></video> <!-- Correção aqui -->
+        <video class="video-slide" src="yellow.mp4" autoplay muted loop></video>
         <div class="content">
             <h1>EVENT<br><span>Sync</span></h1>
-            <p> Bem-vindo ao EventSync, a plataforma ideal para simplificar sua experiência de planejamento de eventos.</p>
+            <p>Bem-vindo ao EventSync, a plataforma ideal para simplificar sua experiência de planejamento de eventos.</p>
             <p>Se você está organizando um pequeno encontro, uma reunião corporativa ou uma grande celebração, o EventSync
                 torna fácil sincronizar todos os detalhes.</p>
         </div>
     </section>
 
-    <form action="valida_cadastro.php" method="POST" class="event-form">
+    <form action="valida-cadastro.php" method="POST" class="event-form">
         <fieldset>
-            <table>
-                <tr>
-                    <td>Crie um código para o evento:</td>
-                    <td><input size="15" name="codigo"></td>
-                </tr>
-                <tr>
-                    <td>Nome do evento:</td>
-                    <td><input size="15" name="nome-evento"></td> <!-- Nome corrigido -->
-                </tr>
-                <tr>
-                    <td>Data do evento:</td>
-                    <td><input type="date" name="data-evento"></td> <!-- Tipo date adicionado -->
-                </tr>
-                <tr>
-                    <td>Horário de início do evento:</td>
-                    <td><input type="time" name="horario-inicio"></td> <!-- Tipo time adicionado -->
-                </tr>
-                <tr>
-                    <td>Descrição do evento:</td>
-                    <td><textarea name="descricao" rows="4" cols="50"></textarea></td> <!-- Usar textarea para descrição -->
-                </tr>
-                <tr>
-                    <td>Local do evento:</td>
-                    <td><input size="15" name="local-evento"></td>
-                </tr>
-                <tr>
-                    <td>Responsável pelo evento:</td>
-                    <td><input size="15" name="responsavel"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="Cadastrar"></td>
-                </tr>
-            </table>
+            <ul>
+                <li>
+                    <label for="codigo">Crie um código para o evento:</label>
+                    <input size="15" name="codigo" id="codigo">
+                </li>
+                <li>
+                    <label for="nome-evento">Nome do evento:</label>
+                    <input size="15" name="nome-evento" id="nome-evento">
+                </li>
+                <li>
+                    <label for="data-evento">Data do evento:</label>
+                    <input type="date" name="data-evento" id="data-evento">
+                </li>
+                <li>
+                    <label for="horario-inicio">Horário de início do evento:</label>
+                    <input type="time" name="horario-inicio" id="horario-inicio">
+                </li>
+                <li>
+                    <label for="horario-fim">Horário do fim do evento:</label>
+                    <input type="time" name="horario-fim" id="horario-fim">
+                </li>
+                <li>
+                    <label for="descricao">Descrição do evento:</label>
+                    <textarea name="descricao" id="descricao" rows="4" cols="50"></textarea>
+                </li>
+                <li>
+                    <label for="local-evento">Local do evento:</label>
+                    <input size="15" name="local-evento" id="local-evento">
+                </li>
+                <li>
+                    <label for="responsavel">Responsável pelo evento:</label>
+                    <input size="15" name="responsavel" id="responsavel">
+                </li>
+                <li>
+                    <input type="submit" value="Cadastrar">
+                </li>
+            </ul>
         </fieldset>
     </form>
 
