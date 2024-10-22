@@ -42,35 +42,35 @@
             <ul>
                 <li>
                     <label for="codigo">Crie um código para o evento:</label>
-                    <input size="15" name="codigo" id="codigo">
+                    <input size="15" name="codigo">
                 </li>
                 <li>
-                    <label for="nome-evento">Nome do evento:</label>
-                    <input size="15" name="nome-evento" id="nome-evento">
+                    <label for="nome_evento">Nome do evento:</label>
+                    <input size="15" name="nome_vento">
                 </li>
                 <li>
-                    <label for="data-evento">Data do evento:</label>
-                    <input type="date" name="data-evento" id="data-evento">
+                    <label for="data_evento">Data do evento:</label>
+                    <input type="date" name="data_evento">
                 </li>
                 <li>
-                    <label for="horario-inicio">Horário de início do evento:</label>
-                    <input type="time" name="horario-inicio" id="horario-inicio">
+                    <label for="hr_inicio">Horário de início do evento:</label>
+                    <input type="time" name="hr_inicio">
                 </li>
                 <li>
-                    <label for="horario-fim">Horário do fim do evento:</label>
-                    <input type="time" name="horario-fim" id="horario-fim">
+                    <label for="hr_fim">Horário do fim do evento:</label>
+                    <input type="time" name="hr_fim" >
                 </li>
                 <li>
                     <label for="descricao">Descrição do evento:</label>
-                    <textarea name="descricao" id="descricao" rows="4" cols="50"></textarea>
+                    <textarea name="descricao"  rows="4" cols="50"></textarea>
                 </li>
                 <li>
-                    <label for="local-evento">Local do evento:</label>
-                    <input size="15" name="local-evento" id="local-evento">
+                    <label for="local_event">Local do evento:</label>
+                    <input size="15" name="local_event" >
                 </li>
                 <li>
                     <label for="responsavel">Responsável pelo evento:</label>
-                    <input size="15" name="responsavel" id="responsavel">
+                    <input size="15" name="responsavel" >
                 </li>
                 <li>
                     <input type="submit" value="Cadastrar">

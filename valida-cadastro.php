@@ -1,35 +1,3 @@
-<?php
-$codigo = $_POST['codigo'];
-$nome = $_POST['nome-evento'];
-$data = $_POST['data-evento'];
-$hr_inicio = $_POST['horario-inicio'];
-$hr_fim = $_POST['horario-fim'];
-$descricao = $_POST['descricao'];
-$local_evento = $_POST['local-evento'];
-$responsavel = $_POST['responsavel'];
-$host = "localhost:3306";
-$user = "root";
-$pass = "";
-$base = "EventSync";
-
-// Conexão com o banco de dados
-$conexao = mysqli_connect($host, $user, $pass, $base);
-
-if (!$conexao) {
-    die("Conexão falhou: " . mysqli_connect_error());
-}
-
-// Inserção no banco de dados
-$resultaDaQueryInsert = mysqli_query($conexao, "INSERT INTO evento(id_evento, nome_evento, data_evento, hr_inicio, hr_fim, descricao, local_event, responsavel) VALUES('$codigo', '$nome', '$data', '$hr_inicio', '$hr_fim', '$descricao', '$local_evento', '$responsavel')");
-
-if (!$resultaDaQueryInsert) {
-    die("Erro ao inserir evento: " . mysqli_error($conexao));
-}
-
-// Consulta para selecionar eventos cadastrados
-$resultaDaQuerySelect = mysqli_query($conexao, "SELECT * FROM evento");
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -41,16 +9,59 @@ $resultaDaQuerySelect = mysqli_query($conexao, "SELECT * FROM evento");
 <body>
     <h1>Eventos Cadastrados</h1>
 
+    <?php
+    // Recebendo os dados do formulário via POST
+    $codigo = $_POST['codigo'];
+    $nome_evento = $_POST['nome_evento'];
+    $data_evento = $_POST['data_evento'];
+    $hr_inicio = $_POST['hr_inicio'];
+    $hr_fim = $_POST['hr_fim'];
+    $descricao = $_POST['descricao'];
+    $local_event = $_POST['local_evento'];
+    $responsavel = $_POST['responsavel'];
+
+    // Conexão com o banco de dados
+    $host = "localhost:3306";
+    $user = "root";
+    $pass = "";
+    $base = "eventsync";
+    $conexao = mysqli_connect($host, $user, $pass, $base);
+
+    if (!$conexao) {
+        die("Conexão falhou: " . mysqli_connect_error());
+    }
+
+    // Inserção no banco de dados
+    $queryInsert = "INSERT INTO evento(id_evento, nome_evento, data_evento, hr_inicio, hr_fim, descricao, local_evento, responsavel) 
+                VALUES ('$codigo', '$nome_evento', '$data_evento', '$hr_inicio', '$hr_fim', '$descricao', '$local_event', '$responsavel')";
+
+    
+    $resultaDaQueryInsert = mysqli_query($conexao, $queryInsert);
+
+    if (!$resultaDaQueryInsert) {
+        die("Erro ao inserir evento: " . mysqli_error($conexao));
+    }
+
+    // Consulta para selecionar eventos cadastrados
+    $querySelect = "SELECT * FROM evento";
+    $resultaDaQuerySelect = mysqli_query($conexao, $querySelect);
+
+    if (!$resultaDaQuerySelect) {
+        die("Erro ao buscar eventos: " . mysqli_error($conexao));
+    }
+    ?>
+
     <table class='event-table'>
         <thead>
             <tr>
                 <th>Código do Evento</th>
                 <th>Nome do Evento</th>
                 <th>Data do Evento</th>
-                <th>Responsável pelo Evento</th>
                 <th>Hora Início</th>
                 <th>Hora Fim</th>
                 <th>Descrição do Evento</th>
+                <th>Local do Evento</th>
+                <th>Responsável pelo Evento</th>
             </tr>
         </thead>
         <tbody>
@@ -61,14 +72,15 @@ $resultaDaQuerySelect = mysqli_query($conexao, "SELECT * FROM evento");
                             <td>" . htmlspecialchars($escrever['id_evento']) . "</td>
                             <td>" . htmlspecialchars($escrever['nome_evento']) . "</td>
                             <td>" . htmlspecialchars($escrever['data_evento']) . "</td>
-                            <td>" . htmlspecialchars($escrever['responsavel']) . "</td>
                             <td>" . htmlspecialchars($escrever['hr_inicio']) . "</td>
                             <td>" . htmlspecialchars($escrever['hr_fim']) . "</td>
                             <td>" . htmlspecialchars($escrever['descricao']) . "</td>
+                            <td>" . htmlspecialchars($escrever['local_event']) . "</td>
+                            <td>" . htmlspecialchars($escrever['responsavel']) . "</td>
                           </tr>";
                 }
             } else {
-                echo "<tr><td colspan='7'>Nenhum evento cadastrado.</td></tr>";
+                echo "<tr><td colspan='8'>Nenhum evento cadastrado.</td></tr>";  // Corrigi o colspan para 8
             }
             ?>
         </tbody>
