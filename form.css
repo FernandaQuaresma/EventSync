@@ -42,6 +42,13 @@ header .navigation .navigation-items a {
     transition: 0.3s ease;
 }
 
+.eventos h1 {
+    z-index: 1; /* Para que o título fique acima do vídeo */
+    color: #402401; /* Para melhor legibilidade */
+    text-align: center; /* Centraliza o texto do título */
+    margin-bottom: 5px; /* Adiciona um espaço abaixo do título */
+}
+
 header .navigation .navigation-items a:before {
     content: '';
     position: absolute;
@@ -84,10 +91,8 @@ header .navigation .navigation-items a:hover:before {
     color: #fff;
     width: 70%;
     margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    margin-left: 10%; /* Desloca o conteúdo mais para a direita */
     margin-top: 10px;
 }
-
 
 .home .content h1 {
     font-size: 4em;
@@ -125,14 +130,21 @@ header .navigation .navigation-items a:hover:before {
 .event-form {
     z-index: 888;
     position: absolute;
-    right: 5%;
+    left: 50%; /* Centraliza horizontalmente */
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
     width: 40%;
     padding: 20px;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-form h1{
+        z-index: 1; /* Para que o título fique acima do vídeo */
+        color: #402401; /* Para melhor legibilidade */
+        text-align: center; /* Centraliza o texto do título */
+        margin-bottom: 5px; /* Adiciona um espaço abaixo do título */
 }
 
 .event-form ul {
@@ -151,7 +163,6 @@ header .navigation .navigation-items a:hover:before {
     color: #402401;
 }
 
-
 .event-form fieldset {
     border: none;
 }
@@ -166,11 +177,10 @@ header .navigation .navigation-items a:hover:before {
     border-radius: 5px;     
 }
 
-td{
+td {
     font-size: 20px;
     font-weight: bolder;
-    color: #402401  ;
-    
+    color: #402401;
 }
 
 .event-form input[type="submit"] {
@@ -189,12 +199,64 @@ td{
     background-color: #d49804;
 }
 
+/* Estilo da tabela de eventos */
+.event-table {
+    width: 100%; /* Faz a tabela ocupar 100% da largura do container */
+    border-collapse: collapse; /* Remove espaços entre as células */
+    margin: 20px 0; /* Espaço acima e abaixo da tabela */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que os cantos arredondados sejam visíveis */
+}
+
+/* Estilo do cabeçalho da tabela */
+.event-table thead {
+    background-color: #F2B705; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto no cabeçalho */
+}
+
+.event-table th {
+    padding: 15px; /* Espaçamento interno nas células do cabeçalho */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    font-weight: bold; /* Negrito para o texto do cabeçalho */
+}
+
+/* Estilo das células da tabela */
+.event-table td {
+    padding: 10px; /* Espaçamento interno nas células */
+    border-bottom: 1px solid #ddd; /* Linha de separação entre as linhas */
+}
+
+/* Estilo para linhas pares */
+.event-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Cor de fundo para linhas pares */
+}
+
+/* Estilo ao passar o mouse sobre as linhas da tabela */
+.event-table tr:hover {
+    background-color: #f2e5a3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo da mensagem quando não há eventos */
+.event-table tr td {
+    text-align: center; /* Centraliza o texto na célula */
+    font-weight: normal; /* Normaliza o peso do texto */
+    color: #402401; /* Cor do texto */
+}
+
+.message {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5em;
+    color: #4CAF50;
+    z-index: 1; 
+}
 /* Responsividade */
 @media (max-width: 1040px) {
     .event-form {
         width: 90%;
-        right: 5%;
+        left: 50%;
         top: auto;
-        transform: none;
+        transform: translate(-50%, 0);
     }
 }

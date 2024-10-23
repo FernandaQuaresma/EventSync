@@ -46,7 +46,7 @@
                 </li>
                 <li>
                     <label for="nome_evento">Nome do evento:</label>
-                    <input size="15" name="nome_vento">
+                    <input size="15" name="nome_evento">
                 </li>
                 <li>
                     <label for="data_evento">Data do evento:</label>

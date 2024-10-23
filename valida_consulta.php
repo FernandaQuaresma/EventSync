@@ -24,7 +24,7 @@ $resultaDaQuerySelect = mysqli_query($conexao, "SELECT * FROM evento WHERE id_ev
     <title>Resultado da Consulta</title>
 </head>
 <body>
-    <h1>Resultado da Consulta</h1>
+    <h1>Resultado da Consultas</h1>
 
     <?php
     if (mysqli_num_rows($resultaDaQuerySelect) > 0) {
