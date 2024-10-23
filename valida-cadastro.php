@@ -31,7 +31,6 @@
                     <tr>
        
         <?php
-        // Recebendo os dados do formulário via POST
         $codigo = $_POST['codigo'];
         $nome_evento = $_POST['nome_evento'];
         $data_evento = $_POST['data_evento'];
@@ -40,8 +39,6 @@
         $descricao = $_POST['descricao'];
         $local_event = $_POST['local_event'];
         $responsavel = $_POST['responsavel'];
-
-        // Conexão com o banco de dados
         $host = "localhost:3306";
         $user = "root";
         $pass = "";
@@ -52,7 +49,6 @@
             die("Conexão falhou: " . mysqli_connect_error());
         }
 
-        // Inserção no banco de dados
         $queryInsert = "INSERT INTO evento(id_evento, nome_evento, data_evento, hr_inicio, hr_fim, descricao, local_event, responsavel) 
                     VALUES ('$codigo', '$nome_evento', '$data_evento', '$hr_inicio', '$hr_fim', '$descricao', '$local_event', '$responsavel')";
 
@@ -62,7 +58,6 @@
             die("Erro ao inserir evento: " . mysqli_error($conexao));
         }
 
-        // Consulta para selecionar eventos cadastrados
         $querySelect = "SELECT * FROM evento";
         $resultaDaQuerySelect = mysqli_query($conexao, $querySelect);
 

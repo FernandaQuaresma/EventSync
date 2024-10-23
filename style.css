@@ -57,7 +57,7 @@ header .navigation .navigation-items a:hover:before {
     width: 100%;
 }
 
-/* Estilo da seção Home */
+
 .home {
     position: relative;
     width: 100%;
@@ -83,8 +83,8 @@ header .navigation .navigation-items a:hover:before {
     z-index: 888;
     color: #fff;
     width: 70%;
-    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    margin-left: 10%; /* Desloca o conteúdo mais para a direita */
+    margin: 0 auto; 
+    margin-left: 10%; 
     margin-top: 10px;
 }
 
@@ -121,7 +121,6 @@ header .navigation .navigation-items a:hover:before {
     object-fit: cover;
 }
 
-/* Estilo do formulário */
 .event-form {
     z-index: 888;
     position: absolute;
@@ -189,7 +188,7 @@ td{
     background-color: #d49804;
 }
 
-/* Responsividade */
+
 @media (max-width: 1040px) {
     .event-form {
         width: 90%;

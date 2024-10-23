@@ -38,7 +38,7 @@ if (!$conexao) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
 
-// Excluir evento
+
 $resultaDaQueryDelete = mysqli_query($conexao, "DELETE FROM evento WHERE id_evento='$codigo'");
 
 if ($resultaDaQueryDelete) {

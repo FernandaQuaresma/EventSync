@@ -28,7 +28,6 @@
         <h1>Resultado da Consulta</h1>
 
         <?php
-        // Conexão com o banco de dados
         $host = "localhost:3306";
         $user = "root";
         $pass = "";
@@ -39,10 +38,10 @@
             die("Conexão falhou: " . mysqli_connect_error());
         }
 
-        // Recebendo o código do evento via POST
+
         $codigo = $_POST['codigo'];
 
-        // Consulta do evento pelo código
+
         $querySelect = "SELECT * FROM evento WHERE id_evento = '$codigo'";
         $resultaDaQuerySelect = mysqli_query($conexao, $querySelect);
 

@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualização de Evento</title>
-    <link rel="stylesheet" href="form.css"> <!-- Inclua seu arquivo CSS aqui -->
+    <link rel="stylesheet" href="form.css"> 
 </head>
 <body>
-    <video class="video-slide" src="yellow.mp4" autoplay muted loop></video> <!-- Vídeo de fundo -->
+    <video class="video-slide" src="yellow.mp4" autoplay muted loop></video>
 
     <header>
         <a href="index.php" class="brand">Event Sync</a>
@@ -43,7 +43,7 @@
             die("Conexão falhou: " . mysqli_connect_error());
         }
 
-        // Atualização do evento
+
         $resultaDaQueryUpdate = mysqli_query($conexao, "UPDATE evento SET nome_evento='$nome_evento', data_evento='$data_evento', hr_inicio='$hr_inicio', hr_fim='$hr_fim', descricao='$descricao', local_event='$local_event', responsavel='$responsavel' WHERE id_evento='$codigo'");
 
         if ($resultaDaQueryUpdate) {

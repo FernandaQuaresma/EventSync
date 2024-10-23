@@ -12,7 +12,7 @@ if (!$conexao) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
 
-// Consulta para buscar o evento pelo código
+
 $resultaDaQuerySelect = mysqli_query($conexao, "SELECT * FROM evento WHERE id_evento='$codigo'");
 
 ?>
